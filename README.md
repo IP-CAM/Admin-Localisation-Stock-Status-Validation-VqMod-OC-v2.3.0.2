@@ -4,4 +4,4 @@
 **Attention**: You have to install `[VQMOD]` for **Opencart** ( https://github.com/vqmod/vqmod/releases ) for this to work!
 
 Upload the contents of the `upload` folder.  
-You also need to ALTER the field `name` of `oc_stock_status` to varchar(50).
+You also need to ALTER the field `name` of `oc_stock_status` to `varchar(50)`.
