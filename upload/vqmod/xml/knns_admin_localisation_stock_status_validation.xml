@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification
+		xmlns="https://github.com/vqmod/vqmod"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
+		>
+		<id><![CDATA[[VQMOD] Admin > System > Localisation > Stock Status, change the stock_status validation from 32 characters to 50. You also need to ALTER the field `name` of `oc_stock_status` to varchar(50)]]></id>
+		<version>0.1.0</version>
+		<vqmver>2.6.6</vqmver>
+		<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
+		<file path="admin/controller/localisation/" name="stock_status.php" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[if ((utf8_strlen($value['name']) < 3) || (utf8_strlen($value['name']) > 32)) {]]></search>
+				<add><![CDATA[			if ((utf8_strlen($value['name']) < 3) || (utf8_strlen($value['name']) > 50)) {]]></add>
+			</operation>
+		</file>
+	</modification>
